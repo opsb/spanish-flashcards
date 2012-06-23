@@ -1,0 +1,22 @@
+:infinitive: ir
+:presente:
+	I give: voy 	
+	You give: vas 
+	They give: va 
+	We give: vamos
+	You give: vais
+	They give: van
+:imperfecto:
+	I gave: iba 
+	You gave: ibas
+	They gave: iba
+	We gave: ibamos 
+	You gave: ibais 
+	They gave: iban
+:preterito:
+	I gave: fui 
+	You gave: fuiste 
+	They gave: fue 
+	We gave: fuimos 
+	You gave: fuisteis
+	They gave: fueron

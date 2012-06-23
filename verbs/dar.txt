@@ -1,0 +1,22 @@
+:infinitive: dar
+:presente:
+	I give: doy 	
+	You give: das 
+	They give: da 
+	We give: damos
+	You give: dais a
+	They give: dan
+:imperfecto:
+	I gave: daba 
+	You gave: dabas
+	They gave: daba 
+	We gave: dábamos 
+	You gave: dabais 
+	They gave: daban
+:preterito:
+	I gave: di 
+	You gave: diste 
+	They gave: dio 
+	We gave: dimos 
+	You gave: disteis
+	They gave: dieron
