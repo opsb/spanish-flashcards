@@ -1,0 +1,22 @@
+:infinitive: 
+:presente: 
+	I give: 
+	You give: 
+	They give: 
+	We give: 
+	You give: 
+	They give: 
+:imperfecto: 
+	I gave: 
+	You gave: 
+	They gave: 
+	We gave: 
+	You gave: 
+	They gave: 
+:preterito: 
+	I gave: 
+	You gave: 
+	They gave: 
+	We gave: 
+	You gave: 
+	They gave: 
