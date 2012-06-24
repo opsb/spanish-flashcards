@@ -2,12 +2,6 @@ require 'yaml'
 require 'pry'
 
 module Verbs
-  def self.build_examples(path, verbs)
-    build_verbs.reject{ |v| verbs && !verbs.include?(v.infinitive) }.
-                map{ |v| v.examples }.
-                flatten
-  end
-  
   def self.build_verbs
     verbs = []
     Dir.glob(File.expand_path('./verbs/*.yaml')) do |path|
@@ -34,10 +28,15 @@ module Verbs
       @examples = build_examples(verb)
     end
     
+    def examples
+      @examples.map(&:text)
+    end    
+    
     def infinitive
       @infinitive
     end
     
+    private
     def build_examples(verb)
       examples = []
       verb.each do |verb_name, conjugations|
@@ -57,18 +56,6 @@ module Verbs
       details = [conjugation_discriminator, @verb_discriminator, verb_name].compact.join("/")
       Example.new(spanish, english + "(#{details})" ) 
     end    
-    
-    def examples
-      @examples.map(&:text)
-    end
-  end
-  
-  def self.load(path, verbs)
-    File.open('flashcard_set.txt', 'w') do |f|    
-      build_examples(path, verbs).each do |example|
-        f.puts example
-      end
-    end        
   end
 end
 
@@ -79,6 +66,13 @@ namespace :verbs do
       verbs = args[:verbs].split(":")
     end
     
-    Verbs.load('./verbs/*.yaml', verbs)
+    verbs = Verbs.build_verbs().reject{ |v| verbs && !verbs.include?(v.infinitive) }
+    
+    File.open('flashcard_set.txt', 'w') do |f|    
+      verbs.map(&:examples).flatten.each do |example|
+        f.puts example
+      end
+    end    
+
   end
 end
