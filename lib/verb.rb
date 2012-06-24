@@ -18,22 +18,17 @@ module Verbs
     private
     def build_examples(verb)
       examples = []
-      verb.each do |verb_name, conjugations|
+      verb.each do |tense_name, conjugations|
         conjugations.each do |english_with_discriminator, spanish|
-          examples << build_example(verb_name, english_with_discriminator, spanish)
+          examples << build_example(tense_name, english_with_discriminator, spanish)
         end
       end
       examples   
     end
     
-    def build_example(verb_name, english_with_discriminator, spanish)
-      begin
-        english, conjugation_discriminator = *english_with_discriminator.match(/([^(]+)(?:\(([^)]+)\))?/)[1,2]
-      rescue
-        binding.pry
-      end
-      details = [conjugation_discriminator, @verb_discriminator, verb_name].compact.join("/")
-      Conjugation.new(spanish, english + "(#{details})" ) 
+    def build_example(tense_name, english, spanish)
+      details = [@verb_discriminator, tense_name].compact.join("/")
+      Conjugation.new(spanish, english + "(" + [@verb_discriminator, tense_name].compact.join(",") + ")") 
     end    
   end
 end

@@ -5,7 +5,7 @@ module Verbs
       @english = english
     end
     def text
-      [@spanish, @english].join(",")      
+      [@spanish, @english].join("\t")      
     end
   end
 end
