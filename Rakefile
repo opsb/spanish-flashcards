@@ -15,14 +15,19 @@ module Verbs
       verb = YAML::load(File.read(path))
       infinitive = verb.delete(:infinitive)
       verb_discriminator = verb.delete(:discriminator)    
-      @examples = []    
+      @examples = build_examples(verb, infinitive, verb_discriminator, verbs)
+    end
+    
+    def build_examples(verb, infinitive, verb_discriminator, verbs)
+      examples = []
       unless verbs && !verbs.include?(infinitive)
         verb.each do |verb_name, conjugations|
           conjugations.each do |english_with_discriminator, spanish|
-            @examples << build_example(verb_name, english_with_discriminator, spanish, verb_discriminator)
+            examples << build_example(verb_name, english_with_discriminator, spanish, verb_discriminator)
           end
         end
-      end      
+      end   
+      examples   
     end
     
     def build_example(verb_name, english_with_discriminator, spanish, verb_discriminator)
