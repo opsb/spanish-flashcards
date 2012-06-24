@@ -3,14 +3,17 @@ require 'pry'
 
 module Verbs
   def self.build_examples(path, verbs)
-    examples = []
+    build_verbs.reject{ |v| verbs && !verbs.include?(v.infinitive) }.
+                map{ |v| v.examples }.
+                flatten
+  end
+  
+  def self.build_verbs
+    verbs = []
     Dir.glob(File.expand_path('./verbs/*.yaml')) do |path|
-      verb = Verb.new(path)
-      unless verbs && !verbs.include?(verb.infinitive)
-        examples.concat verb.examples        
-      end
+      verbs << Verb.new(path)
     end    
-    examples
+    verbs
   end
   
   class Example
@@ -29,6 +32,10 @@ module Verbs
       @infinitive = verb.delete(:infinitive)
       @verb_discriminator = verb.delete(:discriminator)    
       @examples = build_examples(verb)
+    end
+    
+    def infinitive
+      @infinitive
     end
     
     def build_examples(verb)
