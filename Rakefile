@@ -5,7 +5,10 @@ module Verbs
   def self.build_examples(path, verbs)
     examples = []
     Dir.glob(File.expand_path('./verbs/*.yaml')) do |path|
-      examples.concat Verb.new(path, verbs).examples
+      verb = Verb.new(path)
+      unless verbs && !verbs.include?(verb.infinitive)
+        examples.concat verb.examples        
+      end
     end    
     examples
   end
@@ -21,22 +24,20 @@ module Verbs
   end
   
   class Verb
-    def initialize(path, verbs)
+    def initialize(path)
       verb = YAML::load(File.read(path))
       @infinitive = verb.delete(:infinitive)
       @verb_discriminator = verb.delete(:discriminator)    
-      @examples = build_examples(verb, verbs)
+      @examples = build_examples(verb)
     end
     
-    def build_examples(verb, verbs)
+    def build_examples(verb)
       examples = []
-      unless verbs && !verbs.include?(@infinitive)
-        verb.each do |verb_name, conjugations|
-          conjugations.each do |english_with_discriminator, spanish|
-            examples << build_example(verb_name, english_with_discriminator, spanish)
-          end
+      verb.each do |verb_name, conjugations|
+        conjugations.each do |english_with_discriminator, spanish|
+          examples << build_example(verb_name, english_with_discriminator, spanish)
         end
-      end   
+      end
       examples   
     end
     
