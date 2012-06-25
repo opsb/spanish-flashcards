@@ -4,11 +4,11 @@ module Verbs
       verb = YAML::load(File.read(path))
       @infinitive = verb.delete(:infinitive)
       @verb_discriminator = verb.delete(:discriminator)    
-      @examples = build_examples(verb)
+      @examples = build_conjugations(verb)
     end
     
-    def examples
-      @examples.map(&:text)
+    def examples(tenses)
+      @examples.reject{ |e| tenses && !tenses.include?(e.tense) }.map(&:text)
     end    
     
     def infinitive
@@ -16,19 +16,17 @@ module Verbs
     end
     
     private
-    def build_examples(verb)
-      examples = []
-      verb.each do |tense_name, conjugations|
-        conjugations.each do |english_with_discriminator, spanish|
-          examples << build_example(tense_name, english_with_discriminator, spanish)
-        end
-      end
-      examples   
+    def build_conjugations(verb)
+      verb.map do |tense_name, conjugations|
+        conjugations.map do |english_with_discriminator, spanish|
+          build_conjugation(tense_name, english_with_discriminator, spanish)
+        end.flatten
+      end.flatten
     end
     
-    def build_example(tense_name, english, spanish)
+    def build_conjugation(tense_name, english, spanish)
       details = [@verb_discriminator, tense_name].compact.join("/")
-      Conjugation.new(spanish, english + "(" + [@verb_discriminator, tense_name].compact.join(",") + ")") 
+      Conjugation.new(tense_name.to_s, spanish, english + "(" + [@verb_discriminator, tense_name].compact.join(",") + ")") 
     end    
   end
 end

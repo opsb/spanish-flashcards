@@ -1,10 +1,26 @@
 spanish flashcards
 ==================
 
+build all
+---------
+
     $ bundle exec rake verbs:build_flashcards
 
-or
+filter by infinitives
+---------------------
 
-    $ bundle execc rake verbs:build_flashcards[list:of:infinitives:you:want:in:output]
+    $ bundle exec rake verbs:build_flashcards[list:of:infinitives]
+
+filter by tenses
+----------------
+
+		$ bundle exec rake verbs:build_flashcards[all,list:of:tenses]
+
+filter by infinitives and tenses
+--------------------------------
+
+    $ bundle exec rake verbs:build_flashcards[list:of:infinitives,list:of:tenses]
+
+
 
 Generated file is flashcard_set.txt

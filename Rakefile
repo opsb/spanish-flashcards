@@ -14,16 +14,23 @@ module Verbs
 end
 
 namespace :verbs do
-  task :build_flashcards, :verbs do |t, args|
-
+  task :build_flashcards, :verbs, :tenses do |t, args|
     verbs = if args[:verbs]
       verbs = args[:verbs].split(":")
+      verbs = nil if verbs == ["all"]
+      verbs
     end
+    
+    tenses = if args[:tenses]
+      tenses = args[:tenses].split(":")
+      tenses = nil if tenses == ["all"]
+      tenses
+    end    
     
     verbs = Verbs.build(verbs)
     
     File.open('flashcard_set.txt', 'w') do |f|    
-      verbs.map(&:examples).flatten.each do |example|
+      verbs.map{|v|v.examples(tenses)}.flatten.each do |example|
         f.puts example
       end
     end    
