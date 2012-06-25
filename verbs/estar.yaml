@@ -2,23 +2,23 @@
 :infinitive: estar
 :discriminator: condition
 :presente:
-  I am: estoy 
-  You are: estás 
-  He/She/You is/are: está 
-  We are: estamos 
-  You(p) are: estáis 
-  They(p) are: están
+  - am: estoy 
+  - are: estás 
+  - is/are: está 
+  - are: estamos 
+  - are: estáis 
+  - are: están
 :imperfecto:
-  I was: estaba
-  You were: estabas
-  He/She/You was/were: estaba
-  We were: estábamos
-  You(p) were: estabais
-  They(p) were: estaban
+  - was: estaba
+  - were: estabas
+  - was/were: estaba
+  - were: estábamos
+  - were: estabais
+  - were: estaban
 :preterito:
-  I was: estuve
-  You were: estuviste
-  He/She/You was/were: estuvo
-  We were: estuvimos
-  You(p) were: estuvisteis
-  They(p) were: estuvieron
+  - was: estuve
+  - were: estuviste
+  - was/were: estuvo
+  - were: estuvimos
+  - were: estuvisteis
+  - were: estuvieron

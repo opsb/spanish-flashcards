@@ -2,23 +2,23 @@
 :infinitive: ser
 :discriminator: essence
 :presente:
-  I am: soy   
-  You are: eres
-  He/She/You is/are: es
-  We are: somos
-  You(p) are: sois
-  They(p) are: son
+  - am: soy   
+  - are: eres
+  - is/are: es
+  - are: somos
+  - are: sois
+  - are: son
 :imperfecto:
-  I was: era 
-  You were: eras
-  He/She/You were: era
-  We were: éramos 
-  You(p) were: erais 
-  They(p) were: eran
+  - was: era 
+  - were: eras
+  - were: era
+  - were: éramos 
+  - were: erais 
+  - were: eran
 :preterito:
-  I was: fui 
-  You were: fuiste 
-  He/She/You were: fue 
-  We were: fuimos 
-  You(p) were: fuisteis
-  They(p) were: fueron
+  - was: fu
+  - were: fuiste 
+  - were: fue 
+  - were: fuimos 
+  - were: fuisteis
+  - were: fueron
