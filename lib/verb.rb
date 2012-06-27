@@ -31,11 +31,11 @@ module Verbs
     def pronoun(index, tense)
       pronouns = [
         "I",
-        "You",
-        "He/She/They",
-        "We",
-        "You (all)",
-        "They (all)"
+        "you",
+        "he/she/it",
+        "we",
+        "you all",
+        "they all"
       ]
       return "" if tense == :gerundio
       pronouns[index]      
@@ -43,7 +43,7 @@ module Verbs
     
     def build_conjugation(tense_name, english, spanish, pronoun)
       details = [@verb_discriminator, tense_name].compact.join("/")
-      Conjugation.new(tense_name.to_s, spanish, pronoun + " " + english + "(" + [@verb_discriminator, tense_name].compact.join(",") + ")") 
+      Conjugation.new(tense_name.to_s, spanish, pronoun + " " + english + " - " + [@verb_discriminator, tense_name].compact.join(", ")) 
     end    
   end
 end
