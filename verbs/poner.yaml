@@ -1,0 +1,31 @@
+--- 
+:infinitive: poner
+:presente: 
+  - put: pongo 
+  - put: pones 
+  - put: pone 
+  - put: ponemos
+  - put: ponéis 
+  - put: ponen 
+:imperfecto:
+  - put: ponía 
+  - put: ponías 
+  - put: ponía 
+  - put: poníamos
+  - put: poníais 
+  - put: ponían
+:preterito:
+  - put: puse 
+  - put: pusiste 
+  - put: puso 
+  - put: pusimos 
+  - put: pusisteis
+  - put: pusieron
+:imperativo:
+  - put!: pon 
+  - put!: ponga 
+  - put!: pongamos
+  - put!: poned 
+  - put!: pongan
+:gerundio:
+  - putting: poniendo
