@@ -1,0 +1,31 @@
+--- 
+:infinitive: venir
+:presente: 
+  - come: vengo
+  - come: vienes
+  - come: viene
+  - come: venimos
+  - come: venís
+  - come: vienen
+:imperfecto:
+  - came: venía 
+  - came: venías 
+  - came: venía 
+  - came: veníamos 
+  - came: veníais 
+  - came: venían
+:preterito:
+  - came: vine 
+  - came: viniste 
+  - came: vino 
+  - came: vinimos 
+  - came: vinisteis
+  - came: vinieron
+:imperativo:
+  - come!: ven      
+  - come!: venga 
+  - come!: vengamos
+  - come!: venid 
+  - come!: vengan
+:gerundio:
+  - viniendo: 
