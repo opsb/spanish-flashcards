@@ -1,0 +1,31 @@
+--- 
+:infinitive: tomar
+:presente: 
+  - take: tomo 
+  - take: tomas 
+  - take: toma 
+  - take: tomamos
+  - take: tomáis 
+  - take: toman
+:imperfecto:
+  - took: tomaba 
+  - took: tomabas 
+  - took: tomaba 
+  - took: tomábamos
+  - took: tomabais 
+  - took: tomaban
+:preterito:
+  - took: tomé 
+  - took: tomaste 
+  - took: tomó 
+  - took: tomamos 
+  - took: tomasteis
+  - took: tomaron
+:imperativo:
+  - take!: toma 
+  - take!: tome 
+  - take!: tomemos
+  - take!: tomad 
+  - take!: tomen
+:gerundio:
+  - taking: tomando

@@ -1,0 +1,31 @@
+---
+:infinitive: traer
+:presente:
+  - bring: traigo
+  - bring: traes
+  - bring: trae
+  - bring: traemos
+  - bring: traéis
+  - bring: traen
+:imperfecto:
+  - brought: traía
+  - brought: traías
+  - brought: traía
+  - brought: traíamos
+  - brought: traíais
+  - brought: traían
+:preterito:
+  - brought: traje
+  - brought: trajiste
+  - brought: trajo
+  - brought: trajimos
+  - brought: trajisteis
+  - brought: trajeron
+:imperativo:
+  - bring!: trae
+  - bring!: traiga
+  - bring!: traigamos
+  - bring!: traed
+  - bring!: traigan
+:gerundio:
+  - bringing: trayendo
