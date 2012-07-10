@@ -6,6 +6,14 @@ module Verbs
       @verb_discriminator = @verb.delete(:discriminator)    
     end
     
+    def track
+      if @infinitive =~ /ar$/
+        "ar"
+      else
+        "er"
+      end
+    end
+    
     def examples(tenses)
       opts = { :include_tense => true } if tenses.size > 1
       build_conjugations(@verb).reject{ |e| tenses && !tenses.include?(e.tense) }.map(&:text)
@@ -21,33 +29,48 @@ module Verbs
         i = 0
         conjugations.map do |(hash)|
           english_with_discriminator, spanish = hash.keys.first, hash.values.first     
-          conjugation = build_conjugation(tense_name, english_with_discriminator, spanish, pronoun(i, tense_name), opts)
+          conjugation = build_conjugation(tense_name, english_with_discriminator, spanish, english_pronoun(i, tense_name), spanish_pronoun(i, tense_name), opts)
           i += 1
           conjugation
         end.flatten
       end.flatten
     end
     
-    def pronoun(index, tense)
+    def spanish_pronoun(index, tense)
+      if tense == :imperfecto && [0,2].include?(index)
+        [
+          "yo",
+          "tu",
+          "el",
+          "nosotros",
+          "vosotros",
+          "ellos"
+        ][index]
+      else
+        nil
+      end
+    end
+    
+    def english_pronoun(index, tense)
+      return "" if tense == :gerundio
       pronouns = [
         "I",
         "you",
-        "he/she/it",
+        "he",
         "we",
         "you all",
-        "they all"
+        "they all",
       ]
-      return "" if tense == :gerundio
       pronouns[index]      
     end
     
-    def build_conjugation(tense_name, english, spanish, pronoun, opts={})
+    def build_conjugation(tense_name, english, spanish, english_pronoun, spanish_pronoun, opts={})
       details = [@verb_discriminator]
       details << tense_name if opts[:include_tense]
       details = details.compact.join(", ")
-      english_with_details = english + (details.empty? ? "" : " - #{details}")
-      
-      Conjugation.new(tense_name.to_s, spanish, pronoun + " " + english_with_details) 
+      english_with_details = english_pronoun + " " + english + (details.empty? ? "" : " (#{details})")
+      spanish_with_details = spanish_pronoun ? "#{spanish_pronoun } #{spanish}" : spanish
+      Conjugation.new(tense_name.to_s, spanish_with_details, english_with_details) 
     end    
   end
 end
