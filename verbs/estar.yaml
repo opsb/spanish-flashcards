@@ -4,21 +4,21 @@
 :presente:
   - am: estoy 
   - are: estás 
-  - is/are: está 
+  - is: está 
   - are: estamos 
   - are: estáis 
   - are: están
 :imperfecto:
   - was: estaba
   - were: estabas
-  - was/were: estaba
+  - was: estaba
   - were: estábamos
   - were: estabais
   - were: estaban
 :preterito:
   - was: estuve
   - were: estuviste
-  - was/were: estuvo
+  - was: estuvo
   - were: estuvimos
   - were: estuvisteis
   - were: estuvieron

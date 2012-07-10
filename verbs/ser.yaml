@@ -4,21 +4,21 @@
 :presente:
   - am: soy   
   - are: eres
-  - is/are: es
+  - is: es
   - are: somos
   - are: sois
   - are: son
 :imperfecto:
   - was: era 
   - were: eras
-  - were: era
+  - was: era
   - were: éramos 
   - were: erais 
   - were: eran
 :preterito:
   - was: fui
   - were: fuiste 
-  - were: fue 
+  - was: fue 
   - were: fuimos 
   - were: fuisteis
   - were: fueron
