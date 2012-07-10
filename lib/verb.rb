@@ -7,11 +7,7 @@ module Verbs
     end
     
     def track
-      if @infinitive =~ /ar$/
-        "ar"
-      else
-        "er"
-      end
+      @infinitive =~ /ar$/ ? "ar" : "er"
     end
 
     def examples(tenses)
