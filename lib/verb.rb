@@ -59,7 +59,7 @@ module Verbs
         "he",
         "we",
         "you all",
-        "they all",
+        "they",
       ]
       pronouns[index]      
     end
