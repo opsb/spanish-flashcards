@@ -1,5 +1,23 @@
 module Verbs
   class Conjugation
+    SPANISH_PRONOUNS = [
+      "yo",
+      "tu",
+      "el",
+      "nosotros",
+      "vosotros",
+      "ellos"
+    ]
+    
+    ENGLISH_PRONOUNS = [
+      "I",
+      "you",
+      "he",
+      "we",
+      "you all",
+      "they"
+    ]
+    
     def initialize(opts={})
       @tense = opts[:tense]
       @english = opts[:english]
@@ -30,14 +48,7 @@ module Verbs
     
     def spanish_pronoun
       if @tense == :imperfecto && [0,2].include?(@pronoun_index)
-        [
-          "yo",
-          "tu",
-          "el",
-          "nosotros",
-          "vosotros",
-          "ellos"
-        ][@pronoun_index]
+        SPANISH_PRONOUNS[@pronoun_index]
       else
         nil
       end
@@ -45,15 +56,7 @@ module Verbs
     
     def english_pronoun
       return "" if @tense == :gerundio
-      pronouns = [
-        "I",
-        "you",
-        "he",
-        "we",
-        "you all",
-        "they"
-      ]
-      pronouns[@pronoun_index]
+      ENGLISH_PRONOUNS[@pronoun_index]
     end
   end
 end
