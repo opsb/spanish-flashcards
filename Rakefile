@@ -27,7 +27,7 @@ namespace :verbs do
     tenses = if args[:tenses]
       tenses = args[:tenses].split(":")
       tenses = nil if tenses == ["all"]
-      tenses
+      tenses.map(&:to_sym)
     end    
     
     verbs = Verbs.build(verbs, args[:track])
