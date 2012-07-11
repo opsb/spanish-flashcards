@@ -2,19 +2,7 @@ require 'yaml'
 require 'pry'
 require_relative 'lib/conjugation'
 require_relative 'lib/verb'
-
-module Verbs
-  def self.build(infinitives, track)
-    puts "using track #{track}"
-    verbs = []
-    Dir.glob(File.expand_path('./verbs/*.yaml')) do |path|
-      verbs << Verb.new(path)
-    end    
-    
-    verbs.reject{ |v| infinitives && !infinitives.include?(v.infinitive) }.
-          reject{ |v| track && (v.track != track) }
-  end
-end
+require_relative 'lib/loader'
 
 namespace :verbs do
   task :build_flashcards, :verbs, :tenses, :track do |t, args|
@@ -30,7 +18,7 @@ namespace :verbs do
       tenses.map(&:to_sym)
     end    
     
-    verbs = Verbs.build(verbs, args[:track])
+    verbs = Loader.load_verbs(verbs, args[:track])
     
     File.open('flashcard_set.txt', 'w') do |f|    
       verbs.map{|v|v.examples(tenses)}.flatten.each do |example|
