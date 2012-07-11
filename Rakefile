@@ -2,6 +2,7 @@ require 'yaml'
 require 'pry'
 require_relative 'lib/conjugation'
 require_relative 'lib/verb'
+require_relative 'lib/tense'
 require_relative 'lib/loader'
 
 namespace :verbs do
