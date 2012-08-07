@@ -19,20 +19,19 @@ namespace :phonemes do
   end
 end
 
+def read_param(args, key, opts={})
+  value = args[key]
+  if value
+    values = value.split(":")
+    values = nil if values == [opts[:nil_if]]
+    values
+  end
+end
+
 namespace :verbs do
   task :build_flashcards, :verbs, :tenses, :track do |t, args|
-    verbs = if args[:verbs]
-      verbs = args[:verbs].split(":")
-      verbs = nil if verbs == ["all"]
-      verbs
-    end
-    
-    tenses = if args[:tenses]
-      tenses = args[:tenses].split(":")
-      tenses = nil if tenses == ["all"]
-      tenses.map(&:to_sym)
-    end    
-    
+    verbs = read_param(args, :verbs, :nil_if => "all")
+    tenses = read_param(args, :tenses, :nil_if => "all")
     verbs = Loader.load_verbs(verbs, args[:track])
     
     File.open('flashcard_set.txt', 'w') do |f|    
