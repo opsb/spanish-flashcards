@@ -17,6 +17,16 @@ namespace :phonemes do
       end
     end
   end
+  
+  task :build_similar_phonemes do
+    mkdir_p File.expand_path('./sets')  
+    similar_phonemes = File.read(File.expand_path('./syllables/similar_phonemes.txt')).split("\n")
+    File.open(File.expand_path('./sets/similar_phonemes.txt'), 'w') do |file|
+      10.times do
+        file.puts similar_phonemes.map{|p|"#{p}\t#{p}"}.join("\n")
+      end
+    end
+  end
 end
 
 def read_param(args, key, opts={})
