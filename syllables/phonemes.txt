@@ -1,0 +1,115 @@
+a (ha)
+e (he)
+i (hi/y)
+o (ho)
+u (hu)
+ba (va)
+be (ve)
+bi (vi)
+bo (vo)
+bu (vu)
+ca (ka)
+que (ke)
+qui (ki)
+co (ko)
+cu (ku)
+cha
+che
+chi
+cho
+chu
+da
+de
+di
+do
+du
+fa
+fe
+fi
+fo
+fu
+ga
+gue
+gui
+go
+gu
+ja (xa)
+ge (je/xe)
+gi (ji/xi)
+jo
+ju
+la
+le
+li
+lo
+lu
+lla (ya)
+lle (ye)
+lli (yi)
+llo (yo)
+llu (yu)
+lla (ya)
+lle (ye)
+lli (yi)
+llo (yo)
+llu (yu)
+ma
+me
+mi
+mo
+mu
+na
+ne
+ni
+no
+nu
+ña
+ñe
+ñi
+ño
+ñu
+pa
+pe
+pi
+po
+pu
+ra
+re
+ri
+ro
+ru
+ra
+re
+ri
+ro
+ru
+rra
+rre
+rri
+rro
+rru
+sa (za)
+se (ce/ze)
+si (ci/zi)
+so (zo)
+su (zu)
+sa
+se
+si
+so
+su
+za
+ce (ze)
+ci (zi)
+zo
+zu
+ta
+te
+ti
+to
+tu
+wa
+we
+wi
+wo
+wu
